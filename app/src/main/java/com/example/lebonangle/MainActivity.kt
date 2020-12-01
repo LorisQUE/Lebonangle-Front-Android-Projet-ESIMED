@@ -6,6 +6,8 @@ import android.content.Intent
 import android.view.View
 import kotlinx.android.synthetic.main.activity_main.*
 
+const val BASE_URL = "http://10.0.2.2:8000/api/" //10.0.2.2 permet à l'émulateur d'accèder au localhost
+
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -18,6 +20,7 @@ class MainActivity : AppCompatActivity() {
 
         mainMenuButtonAnnonces.setOnClickListener( View.OnClickListener {
             val intent = Intent(this, AdvertsActivity::class.java)
+            intent.putExtra("category", 0)
             startActivity(intent)
         })
 
