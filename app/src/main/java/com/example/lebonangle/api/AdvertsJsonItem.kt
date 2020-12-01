@@ -1,5 +1,7 @@
 package com.example.lebonangle.api
 
+import java.io.Serializable
+
 data class AdvertsJsonItem(
     val author: String,
     val category: String,
@@ -11,4 +13,4 @@ data class AdvertsJsonItem(
     val publishedAt: String,
     val state: String,
     val title: String
-)
+):Serializable

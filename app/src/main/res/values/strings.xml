@@ -18,6 +18,9 @@
     <!-- Création d'une annonce activity -->
     <string name="title_activity_advert_create">Création d\'une annonce</string>
 
+    <!-- Détails d'une annonce -->
+    <string name="title_activity_advert_details">Détails d\'une annonce</string>
+
     <!-- GÉNÉRAL ANNONCE -->
     <string name="annonce_titre">Titre : </string>
     <string name="annonce_auteur">Auteur : </string>
@@ -25,5 +28,7 @@
     <string name="annonce_categorie">Catégorie : </string>
     <string name="annonce_prix">Prix : </string>
     <string name="annonce_contenue">Contenue : </string>
+    <string name="annonce_published">Date de publication : </string>
+    <string name="annonce_photos">Photos : </string>
 
 </resources>

@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AdvertActivity">
+
+    <ProgressBar
+        android:id="@+id/progressBarAdvert"
+        style="?android:attr/progressBarStyleLarge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"/>
+
+    <TextView
+        android:id="@+id/txtAnnonceTitre"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/annonce_titre"/>
+
+    <TextView
+        android:id="@+id/txtAnnonceTitreEdit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@+id/txtAnnonceTitre"/>
+
+    <TextView
+        android:id="@+id/txtAnnonceAuteur"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/annonce_auteur"
+        android:layout_below="@+id/txtAnnonceTitre"/>
+
+    <TextView
+        android:id="@+id/txtAnnonceAuteurEdit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txtAnnonceTitre"
+        android:layout_toEndOf="@+id/txtAnnonceAuteur"/>
+
+    <TextView
+        android:id="@+id/txtAnnonceMail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/annonce_mail"
+        android:layout_below="@+id/txtAnnonceAuteur"/>
+
+    <TextView
+        android:id="@+id/txtAnnonceMailEdit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txtAnnonceAuteur"
+        android:layout_toEndOf="@+id/txtAnnonceMail"/>
+
+    <TextView
+        android:id="@+id/txtAnnoncePrix"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/annonce_prix"
+        android:layout_below="@+id/txtAnnonceMail"/>
+
+    <TextView
+        android:id="@+id/txtAnnoncePrixEdit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txtAnnonceMail"
+        android:layout_toEndOf="@+id/txtAnnoncePrix"/>
+
+    <TextView
+        android:id="@+id/txtAnnonceContenus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/annonce_contenue"
+        android:layout_below="@+id/txtAnnoncePrix"/>
+
+    <TextView
+        android:id="@+id/txtAnnonceContenusEdit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txtAnnoncePrix"
+        android:layout_toEndOf="@+id/txtAnnonceContenus"/>
+
+    <TextView
+        android:id="@+id/txtAnnoncePublished"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/annonce_published"
+        android:layout_below="@+id/txtAnnonceContenusEdit"/>
+
+    <TextView
+        android:id="@+id/txtAnnoncePublishedEdit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txtAnnonceContenusEdit"
+        android:layout_toEndOf="@+id/txtAnnoncePublished"/>
+
+</RelativeLayout>

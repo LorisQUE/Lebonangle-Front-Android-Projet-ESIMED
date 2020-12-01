@@ -2,7 +2,7 @@ package com.example.lebonangle
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
+import android.view.View
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.lebonangle.adapter.AdvertsAdapter
 import com.example.lebonangle.adapter.CategoriesAdapter
@@ -20,21 +20,18 @@ import retrofit2.converter.gson.GsonConverterFactory
 import java.util.*
 
 class AdvertsActivity : AppCompatActivity() {
-    private var TAG = "Adverts"
     private var context = this
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_adverts)
-        var category = intent.getSerializableExtra("category") as Int
 
-        println("CATEGORY EST ICI : " + category)
+        var category = intent.getSerializableExtra("category") as Int
 
         getCurrentData(category)
     }
 
     private fun getCurrentData(categ:Int){
-        Log.d(TAG, "getCurrentData")
         val api = Retrofit.Builder()
             .baseUrl(BASE_URL)
             .addConverterFactory(GsonConverterFactory.create())
@@ -50,15 +47,12 @@ class AdvertsActivity : AppCompatActivity() {
             }
             if(response.isSuccessful){
                 val data = response.body()!!
-                println(data)
-
                 withContext(Dispatchers.Main){
-
                     //On insère les datas dans la vue lol
                     val advertAdapter: AdvertsAdapter = AdvertsAdapter(context, data)
                     recyclerViewAdverts.adapter = advertAdapter
                     recyclerViewAdverts.layoutManager = LinearLayoutManager(context)
-
+                    progressBarAdverts.visibility = View.GONE
                 }
             }
         }

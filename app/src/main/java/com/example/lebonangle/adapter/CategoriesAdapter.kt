@@ -5,6 +5,7 @@ import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ProgressBar
 import android.widget.TextView
 import androidx.cardview.widget.CardView
 import androidx.core.content.ContextCompat.startActivity
@@ -35,8 +36,6 @@ class CategoriesAdapter(pContext:Context, pCategories:CategoriesJson):RecyclerVi
         holder.txtName.setText(categories[position].name)
 
         holder.cardview.setOnClickListener(View.OnClickListener {
-
-            println("DEBUG CLICKED")
 
             val intent = Intent(context, AdvertsActivity::class.java)
             intent.putExtra("category", categories[position].id)

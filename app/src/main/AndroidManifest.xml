@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.lebonangle">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -11,9 +11,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".AdvertCreateActivity"></activity>
-        <activity android:name=".AdvertsActivity" />
-        <activity android:name=".CategoriesActivity" />
+        <activity android:name=".AdvertActivity" android:label="@string/title_activity_advert_details"/>
+        <activity android:name=".AdvertCreateActivity" android:label="@string/title_activity_advert_create"/>
+        <activity android:name=".AdvertsActivity" android:label="@string/title_activity_adverts_list"/>
+        <activity android:name=".CategoriesActivity" android:label="@string/title_activity_categories_list"/>
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
