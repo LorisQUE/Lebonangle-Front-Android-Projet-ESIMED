@@ -69,31 +69,47 @@
         android:layout_toEndOf="@+id/txtAnnoncePrix"/>
 
     <TextView
-        android:id="@+id/txtAnnonceContenus"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/annonce_contenue"
-        android:layout_below="@+id/txtAnnoncePrix"/>
-
-    <TextView
-        android:id="@+id/txtAnnonceContenusEdit"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/txtAnnoncePrix"
-        android:layout_toEndOf="@+id/txtAnnonceContenus"/>
-
-    <TextView
         android:id="@+id/txtAnnoncePublished"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/annonce_published"
-        android:layout_below="@+id/txtAnnonceContenusEdit"/>
+        android:layout_below="@+id/txtAnnoncePrixEdit"/>
 
     <TextView
         android:id="@+id/txtAnnoncePublishedEdit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/txtAnnonceContenusEdit"
+        android:layout_below="@+id/txtAnnoncePrixEdit"
         android:layout_toEndOf="@+id/txtAnnoncePublished"/>
+
+    <TextView
+        android:id="@+id/txtAnnonceContenus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/annonce_contenue"
+        android:layout_below="@+id/txtAnnoncePublishedEdit"/>
+
+    <TextView
+        android:id="@+id/txtAnnonceContenusEdit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txtAnnoncePublishedEdit"
+        android:layout_toEndOf="@+id/txtAnnonceContenus"/>
+
+    <TextView
+        android:id="@+id/txtAnnoncePhotos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/annonce_photos"
+        android:layout_below="@+id/txtAnnonceContenusEdit"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewPictures"
+        android:scrollbars="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/txtAnnoncePhotos">
+
+    </androidx.recyclerview.widget.RecyclerView>
 
 </RelativeLayout>

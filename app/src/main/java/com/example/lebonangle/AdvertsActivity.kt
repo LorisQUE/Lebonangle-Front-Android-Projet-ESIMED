@@ -5,10 +5,8 @@ import android.os.Bundle
 import android.view.View
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.lebonangle.adapter.AdvertsAdapter
-import com.example.lebonangle.adapter.CategoriesAdapter
 import com.example.lebonangle.api.AdvertsJson
 import kotlinx.android.synthetic.main.activity_adverts.*
-import kotlinx.android.synthetic.main.activity_categories.*
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
@@ -17,7 +15,6 @@ import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.awaitResponse
 import retrofit2.converter.gson.GsonConverterFactory
-import java.util.*
 
 class AdvertsActivity : AppCompatActivity() {
     private var context = this
@@ -33,7 +30,7 @@ class AdvertsActivity : AppCompatActivity() {
 
     private fun getCurrentData(categ:Int){
         val api = Retrofit.Builder()
-            .baseUrl(BASE_URL)
+            .baseUrl(BASE_URL_API)
             .addConverterFactory(GsonConverterFactory.create())
             .build()
             .create(ApiRequest::class.java)
@@ -49,7 +46,7 @@ class AdvertsActivity : AppCompatActivity() {
                 val data = response.body()!!
                 withContext(Dispatchers.Main){
                     //On insère les datas dans la vue lol
-                    val advertAdapter: AdvertsAdapter = AdvertsAdapter(context, data)
+                    val advertAdapter = AdvertsAdapter(context, data)
                     recyclerViewAdverts.adapter = advertAdapter
                     recyclerViewAdverts.layoutManager = LinearLayoutManager(context)
                     progressBarAdverts.visibility = View.GONE

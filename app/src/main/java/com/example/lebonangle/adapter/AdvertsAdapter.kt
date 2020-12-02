@@ -24,13 +24,10 @@ class AdvertsAdapter(pContext:Context, pAdvert: AdvertsJson):RecyclerView.Adapte
 
     val context:Context = pContext
     val adverts:AdvertsJson = pAdvert
-    val myFormat = "dd/MM/yyyy" // mention the format you need
-    val sdf = SimpleDateFormat(myFormat, Locale.FRANCE)
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): AdvertsViewHolder {
         val inflater:LayoutInflater = LayoutInflater.from(context)
         val view:View = inflater.inflate(R.layout.advert_row, parent, false)
-        val progressBar = view.findViewById<ProgressBar>(R.id.progressBarAdverts)
         return AdvertsViewHolder(view)
     }
 
@@ -41,9 +38,6 @@ class AdvertsAdapter(pContext:Context, pAdvert: AdvertsJson):RecyclerView.Adapte
     override fun onBindViewHolder(holder: AdvertsViewHolder, position: Int) {
         val id = "#" + adverts[position].id.toString()
         val price = adverts[position].price.toString() + "€"
-
-        /*var localDateTime = LocalDateTime.parse(adverts[position].publishedAt)
-        println("localdatetime" + localDateTime)*/
 
         val publishedAt:String
             if(!adverts[position].publishedAt.isNullOrEmpty()) {

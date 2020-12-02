@@ -3,7 +3,6 @@ package com.example.lebonangle
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import android.widget.LinearLayout
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.lebonangle.adapter.CategoriesAdapter
 import kotlinx.android.synthetic.main.activity_categories.*
@@ -14,7 +13,6 @@ import kotlinx.coroutines.withContext
 import retrofit2.Retrofit
 import retrofit2.awaitResponse
 import retrofit2.converter.gson.GsonConverterFactory
-import retrofit2.create
 
 class CategoriesActivity : AppCompatActivity() {
     private var context = this
@@ -28,7 +26,7 @@ class CategoriesActivity : AppCompatActivity() {
 
     private fun getCurrentData(){
         val api = Retrofit.Builder()
-            .baseUrl(BASE_URL)
+            .baseUrl(BASE_URL_API)
             .addConverterFactory(GsonConverterFactory.create())
             .build()
             .create(ApiRequest::class.java)

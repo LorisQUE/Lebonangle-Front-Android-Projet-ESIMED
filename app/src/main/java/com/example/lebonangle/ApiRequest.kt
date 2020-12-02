@@ -1,11 +1,9 @@
 package com.example.lebonangle
 
-import com.example.lebonangle.api.AdvertsJson
-import com.example.lebonangle.api.AdvertsJsonItem
-import com.example.lebonangle.api.CategoriesJson
-import com.example.lebonangle.api.CategoriesJsonItem
+import com.example.lebonangle.api.*
 import retrofit2.Call
 import retrofit2.http.GET
+import retrofit2.http.Path
 import retrofit2.http.Query
 
 interface ApiRequest {
@@ -19,4 +17,6 @@ interface ApiRequest {
     @GET("adverts")
     fun getAdvertsFromCategory(@Query("category.id") categoryId: Int): Call<AdvertsJson>
 
+    @GET("pictures")
+    fun getPicturesFromAdvert(@Query("advert.id") advertId: Int): Call<PicturesJson>
 }
