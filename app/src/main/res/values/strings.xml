@@ -31,4 +31,7 @@
     <string name="annonce_published">Date de publication : </string>
     <string name="annonce_photos">Photos : </string>
 
+    <string name="valider">Valider</string>
+    <string name="annuler">Annuler</string>
+
 </resources>
