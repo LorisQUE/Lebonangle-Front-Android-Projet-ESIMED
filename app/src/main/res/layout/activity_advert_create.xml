@@ -1,10 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".AdvertCreateActivity">
+<TableLayout
+    android:id="@+id/createAdvertTableLayout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
     <TableRow>
         <TextView
             android:id="@+id/advertCreateAuteur"
@@ -89,8 +93,19 @@
         android:layout_width="fill_parent"
         android:layout_height="fill_parent">
         <Button
+            android:id="@+id/btnAjoutPhoto"
+            android:text="@string/addPhoto"/>
+        <Button
             android:id="@+id/btnValider"
             android:text="@string/valider"
             android:layout_weight="1"/>
     </TableRow>
 </TableLayout>
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewAdvertPictures"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/createAdvertTableLayout">
+
+    </androidx.recyclerview.widget.RecyclerView>
+</RelativeLayout>
